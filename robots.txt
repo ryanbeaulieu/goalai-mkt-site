@@ -1,0 +1,91 @@
+# =====================================================================
+# robots.txt for goal.ai
+#
+# This file explicitly welcomes general web crawlers AND the AI
+# agents / answer-engines that matter for discovery today:
+#   OpenAI (ChatGPT, SearchGPT)  -> GPTBot, OAI-SearchBot, ChatGPT-User
+#   Anthropic (Claude)           -> ClaudeBot, Claude-Web, anthropic-ai
+#   Perplexity                   -> PerplexityBot, Perplexity-User
+#   Google AI overviews / Gemini -> Google-Extended (training signal),
+#                                   Googlebot (web index)
+#   Apple Intelligence           -> Applebot-Extended
+#   xAI Grok                     -> xAI, Grok
+#   Bing / Copilot               -> Bingbot, MSNBot
+#   Common Crawl                 -> CCBot
+#   Meta AI                      -> FacebookBot, Meta-ExternalAgent
+#   You.com                      -> YouBot
+#   DuckDuckGo                   -> DuckDuckBot
+# =====================================================================
+
+# --- General web crawlers (Google / Bing / DDG / etc.) ---------------
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+
+# --- AI answer-engines & LLM training crawlers -----------------------
+# Explicit allow entries so there is no ambiguity for the agents
+# that honor per-UA directives.
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: xAI
+Allow: /
+
+User-agent: Grok
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+User-agent: Cohere-ai
+Allow: /
+
+User-agent: Diffbot
+Allow: /
+
+# --- Sitemap ---------------------------------------------------------
+Sitemap: https://goal.ai/sitemap.xml
