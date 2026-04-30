@@ -436,13 +436,20 @@
     display:flex;flex-direction:row;align-items:center;gap:20px;
     transition:border-color .3s, transform .4s var(--t-spring);
   }
-  .person:hover{border-color:var(--line-2);transform:translateY(-3px)}
+  .person:hover{
+    border-color:var(--line-2);
+    transform:translateY(-3px);
+    & .portrait {
+      background-color: rgb(from var(--accent-4) r g b / 1);
+    }
+  }
   .portrait{
     width:120px;height:120px;flex:0 0 120px;
     border-radius:50%;
-    background:#070b1e;
+    background-color: rgb(from var(--accent-4) r g b / 0.5);
     overflow:hidden;position:relative;
     box-shadow:0 0 0 1px rgba(255,255,255,0.06), 0 18px 40px -20px rgba(181,112,255,0.35);
+    transition: background-color 0.3s ease-out;
   }
   @media (max-width:520px){.portrait{width:96px;height:96px;flex:0 0 96px}}
   .portrait .placeholder{
@@ -1139,11 +1146,8 @@
 
       <div class="pillar">
         <div>
-          <svg class="icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
-            <circle cx="16" cy="20" r="6" stroke="#4d8bff" stroke-width="3"/>
-            <circle cx="32" cy="20" r="6" stroke="#4d8bff" stroke-width="3"/>
-            <circle cx="24" cy="34" r="6" stroke="#4d8bff" stroke-width="3"/>
-            <path d="M22 20H26M20 26L22 30M28 26L26 30" stroke="#4d8bff" stroke-width="1.2" stroke-dasharray="2 2"/>
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#4d8bff" stroke-width="1.5" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z"/>
           </svg>
           <h3 class="mt-s">AI Team Creation</h3>
         </div>
@@ -1152,11 +1156,10 @@
 
       <div class="pillar">
         <div>
-          <svg class="icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
-            <path d="M10 24L20 14M28 34L38 24M10 24L20 34M28 14L38 24" stroke="#b570ff" stroke-width="1.5" stroke-linecap="round"/>
-            <circle cx="10" cy="24" r="3" fill="#b570ff"/>
-            <circle cx="38" cy="24" r="3" fill="#b570ff"/>
-            <circle cx="24" cy="24" r="4" fill="#4d8bff"/>
+          <svg class="icon" viewBox="0 0 24 24" fill="none" style="height: 40px" stroke="#b570ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M14 2v6a2 2 0 0 0 .245.96l5.51 10.08A2 2 0 0 1 18 22H6a2 2 0 0 1-1.755-2.96l5.51-10.08A2 2 0 0 0 10 8V2"/>
+            <path d="M6.453 15h11.094"/>
+            <path d="M8.5 2h7"/>
           </svg>
           <h3 class="mt-s">AI Matching</h3>
         </div>
@@ -1165,10 +1168,9 @@
 
       <div class="pillar">
         <div>
-          <svg class="icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
-            <path d="M8 38L16 28L24 32L40 12" stroke="#ff8a4c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-            <circle cx="40" cy="12" r="3" fill="#ff8a4c"/>
-            <path d="M8 42H40" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#ff8a4c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M16 7h6v6"/>
+            <path d="m22 7-8.5 8.5-5-5L2 17"/>
           </svg>
           <h3 class="mt-s">AI Goal-Setting</h3>
         </div>
@@ -1177,7 +1179,7 @@
 
       <div class="pillar">
         <div>
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#4d8bff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" transform="scale(1.05)" stroke="#4d8bff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M16 10a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 14.286V4a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/>
             <path d="M20 9a2 2 0 0 1 2 2v10.286a.71.71 0 0 1-1.212.502l-2.202-2.202A2 2 0 0 0 17.172 19H10a2 2 0 0 1-2-2v-1"/>
           </svg>
@@ -1188,7 +1190,7 @@
 
       <div class="pillar">
         <div>
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#b570ff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <svg class="icon" transform="scale(1.125)" viewBox="0 0 24 24" fill="none" stroke="#b570ff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <!-- Lucide: megaphone -->
             <path d="M3 11 L3 13 A 1 1 0 0 0 4 14 L7 14 L17 19 C 17.5 19.3 18 19 18 18.5 L18 5.5 C 18 5 17.5 4.7 17 5 L7 10 L4 10 A 1 1 0 0 0 3 11 Z"/>
             <path d="M21 11 L21 13"/>
@@ -1201,7 +1203,7 @@
 
       <div class="pillar">
         <div>
-          <svg class="icon" viewBox="0 0 24 24" fill="#4d8bff" aria-hidden="true">
+          <svg class="icon" transform="scale(1.1)" viewBox="0 0 24 24" fill="#4d8bff" aria-hidden="true">
             <path d="M6 20c1.1 0 2-.9 2-2v-7c0-1.1-.9-2-2-2s-2 .9-2 2v7c0 1.1.9 2 2 2m10-5v3c0 1.1.9 2 2 2s2-.9 2-2v-3c0-1.1-.9-2-2-2s-2 .9-2 2m-4 5c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2s-2 .9-2 2v12c0 1.1.9 2 2 2"/>
           </svg>
           <h3 class="mt-s">AI Analytics</h3>
@@ -1309,10 +1311,13 @@
 
             <!-- =============== AI MATCH CHIP (top-right) =============== -->
             <g transform="translate(470 60) rotate(5 135 42)">
-              <rect width="270" height="90" rx="20" fill="url(#brandG)"/>
+              <rect width="270" height="94" rx="20" fill="url(#brandG)"/>
               <text x="20" y="28" font-family="Inter" font-weight="600" font-size="10" fill="#070b1e" letter-spacing="2">AI MATCH</text>
-              <text x="20" y="54" font-family="Instrument Serif" font-style="italic" font-size="18" fill="#070b1e">We found the perfect</text>
-              <text x="20" y="74" font-family="Instrument Serif" font-style="italic" font-size="18" fill="#070b1e">team for you.</text>
+              <text x="20" y="54" font-family="Instrument Serif" font-style="italic" font-size="18" fill="#070b1e">We found the perfect team for you.</text>
+              <g transform="translate(20 64)">
+                <rect width="92" height="22" rx="11" fill="var(--bg-2)" opacity="0.9"/>
+                <text x="46" y="15" text-anchor="middle" font-family="Inter" font-size="11" font-weight="600" fill="#f2f4ff">Join team</text>
+              </g>
             </g>
 
           </svg>
@@ -2268,7 +2273,8 @@
 
       <div class="person reveal">
         <div class="portrait">
-          <img src="team-rajiv.png" alt="Rajiv Kumar, M.D., Co-Founder and CEO of Goal AI" width="240" height="240" loading="lazy" decoding="async"/>
+          <!-- <img src="team-rajiv.png" alt="Rajiv Kumar, M.D., Co-Founder and CEO of Goal AI" width="240" height="240" loading="lazy" decoding="async"/> -->
+          <img src="Rajiv-headshot.png" alt="Rajiv Kumar, M.D., Co-Founder and CEO of Goal AI" width="240" height="240" loading="lazy" decoding="async"/>
         </div>
         <div class="meta">
           <h3>Rajiv Kumar, M.D.</h3>
@@ -2279,7 +2285,8 @@
 
       <div class="person reveal delay-1">
         <div class="portrait">
-          <img src="team-lee.png" alt="Lee Pichette, Co-Founder and President of Goal AI" width="240" height="240" loading="lazy" decoding="async"/>
+          <!-- <img src="team-lee.png" alt="Lee Pichette, Co-Founder and President of Goal AI" width="240" height="240" loading="lazy" decoding="async"/> -->
+          <img src="Lee-headshot.png" alt="Lee Pichette, Co-Founder and President of Goal AI" width="240" height="240" loading="lazy" decoding="async"/>
         </div>
         <div class="meta">
           <h3>Lee Pichette</h3>
