@@ -194,7 +194,7 @@
   -------------------------------------------------- */
   .hero{
     min-height:100vh;
-    padding:160px 0 120px;
+    padding:112px 0 140px 0;
     display:flex;align-items:center;justify-content:center;
     overflow:visible;
   }
@@ -250,11 +250,34 @@
   .hero-cards .big{font-size:34px;font-weight:500;letter-spacing:-0.02em;margin-top:6px;color:var(--ink)}
   .hero-cards .big .unit{font-size:15px;color:var(--muted);font-weight:400;margin-left:4px;letter-spacing:0}
   .hero-cards .tag-line{font-size:13px;color:var(--ink-2);margin-top:6px}
-  .hero-cards .bar{height:6px;border-radius:999px;background:rgba(255,255,255,0.08);margin-top:16px;overflow:hidden;position:relative}
+  .hero-cards .bar{height:6px;border-radius:999px;background:rgba(255,255,255,0.08);margin-top:4px;overflow:hidden;position:relative}
   .hero-cards .bar i{position:absolute;inset:0;right:auto;border-radius:999px;display:block}
   .hero-cards .ring{display:block;margin:4px auto 0}
   .hero-cards .chip{display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:999px;border:1px solid rgba(255,255,255,0.1);font-size:11px;color:var(--ink-2);letter-spacing:0.02em;margin-top:12px}
   .hero-cards .chip .sq{width:7px;height:7px;border-radius:2px}
+  /* hero card: mini leaderboard */
+  .hero-cards .lb-rows{display:flex;flex-direction:column;gap:6px;margin-top:10px}
+  .hero-cards .lb-row{
+    display:grid;grid-template-columns:18px 1fr auto;align-items:center;gap:8px;
+    font-size:12px;color:var(--ink-2);padding:6px 8px;border-radius:10px;
+    background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06)
+  }
+  .hero-cards .lb-row.you{background:rgba(77,139,255,0.12);border-color:rgba(77,139,255,0.25);color:var(--ink)}
+  .hero-cards .lb-rank{font-size:10px;font-weight:600;color:var(--muted);font-variant-numeric:tabular-nums}
+  .hero-cards .lb-name{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .hero-cards .lb-val{font-variant-numeric:tabular-nums;color:#ff8a4c;font-weight:500}
+  /* hero card: week strip (calendar feel) */
+  .hero-cards .week-strip{display:flex;justify-content:space-between;gap:4px;margin-top:12px}
+  .hero-cards .week-day{display:flex;flex-direction:column;align-items:center;gap:5px;flex:1;min-width:0}
+  .hero-cards .week-day .w{font-size:9px;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted)}
+  .hero-cards .week-day .dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,0.12)}
+  .hero-cards .week-day .dot.on{background:#ff5d9d;box-shadow:0 0 10px rgba(255,93,157,0.35)}
+  /* Walkathon card: pace chart */
+  .hero-cards .pace-viz{margin-top:12px;width:100%}
+  .hero-cards .pace-legend{
+    display:flex;justify-content:space-between;align-items:center;font-size:11px;color:var(--ink-2);margin-top:8px
+  }
+  .hero-cards .pace-legend .pace-ok{color:#7ae7b3;font-weight:500}
   @media(max-width:720px){
     .hero-cards{grid-template-columns:1fr;gap:16px}
     .hero-cards .c-steps,.hero-cards .c-mind,.hero-cards .c-nutri{grid-column:1/-1;transform:none}
@@ -774,64 +797,133 @@
     <!-- Hero: three floating challenge cards -->
     <div class="hero-cards reveal delay-4" aria-hidden="true">
 
-      <!-- Card 1: Movement (AI-generated workouts completed) -->
-      <div class="card c-steps">
-        <div class="label">Movement</div>
-        <div class="big">9<span class="unit">AI workouts</span></div>
-        <div class="tag-line">Personalized to your energy, calendar, and goals.</div>
-        <div class="bar"><i style="width:74%;background:linear-gradient(90deg,#4d8bff,#b570ff)"></i></div>
-        <div class="chip"><span class="sq" style="background:#4d8bff"></span>+3 vs Busy Parents Crew avg</div>
-      </div>
+      <!-- Original Movement / Mindfulness / Nutrition cards preserved in <template> (not shown; safe place for nested comments) -->
+      <template id="archived-hero-glass-cards">
+        <div class="card c-steps">
+          <div class="label">Movement</div>
+          <div class="big">9<span class="unit">AI workouts</span></div>
+          <div class="tag-line">Personalized to your energy, calendar, and goals.</div>
+          <div class="bar"><i style="width:74%;background:linear-gradient(90deg,#4d8bff,#b570ff)"></i></div>
+          <div class="chip"><span class="sq" style="background:#4d8bff"></span>+3 vs Busy Parents Crew avg</div>
+        </div>
+        <div class="card c-mind">
+          <div class="label">Mindfulness</div>
+          <svg viewBox="0 0 120 120" width="120" height="120" class="ring" aria-hidden="true">
+            <defs>
+              <linearGradient id="mindRing" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#ff5d9d"/>
+                <stop offset="1" stop-color="#b570ff"/>
+              </linearGradient>
+            </defs>
+            <circle cx="60" cy="60" r="46" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="10"/>
+            <circle cx="60" cy="60" r="46" fill="none" stroke="url(#mindRing)" stroke-width="10" stroke-linecap="round"
+                    stroke-dasharray="289" stroke-dashoffset="96" transform="rotate(-90 60 60)"/>
+            <text x="60" y="58" text-anchor="middle" font-family="Inter" font-size="22" font-weight="500" fill="#f2f4ff">12</text>
+            <text x="60" y="74" text-anchor="middle" font-family="Inter" font-size="10" fill="#848aae" letter-spacing="1">OF 15 MIN</text>
+          </svg>
+          <div class="tag-line" style="text-align:center;margin-top:12px">AI-guided box breathing. Reflection up next.</div>
+        </div>
+        <div class="card c-nutri">
+          <div class="label" style="display:flex;align-items:center;gap:6px;justify-content:center">
+            Nutrition
+          </div>
+          <div class="big">87<span class="unit">/ 100</span></div>
+          <div class="tag-line">AI scored 14 meal photos this week.</div>
+          <svg viewBox="0 0 200 44" preserveAspectRatio="none" style="width:100%;height:40px;margin-top:14px;display:block" aria-hidden="true">
+            <defs>
+              <linearGradient id="heroSparkG" x1="0" x2="1" y1="0" y2="0">
+                <stop offset="0" stop-color="#ff8a4c"/>
+                <stop offset="0.5" stop-color="#ff5d9d"/>
+                <stop offset="1" stop-color="#b570ff"/>
+              </linearGradient>
+              <linearGradient id="heroSparkFill" x1="0" x2="0" y1="0" y2="1">
+                <stop offset="0" stop-color="#ff5d9d" stop-opacity="0.28"/>
+                <stop offset="1" stop-color="#ff5d9d" stop-opacity="0"/>
+              </linearGradient>
+            </defs>
+            <path d="M0,36 L28,30 L56,33 L84,22 L112,18 L140,12 L168,10 L200,6 L200,44 L0,44 Z"
+                  fill="url(#heroSparkFill)"/>
+            <polyline points="0,36 28,30 56,33 84,22 112,18 140,12 168,10 200,6"
+                      fill="none" stroke="url(#heroSparkG)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="200" cy="6" r="3.5" fill="#ff5d9d"/>
+          </svg>
+          <div class="chip"><span class="sq" style="background:#ff5d9d"></span>+15 from last week</div>
+        </div>
+      </template>
 
-      <!-- Card 2: Mindfulness -->
-      <div class="card c-mind">
-        <div class="label">Mindfulness</div>
-        <svg viewBox="0 0 120 120" width="120" height="120" class="ring" aria-hidden="true">
+      <!-- Card 1: Company step challenge (aligned with hero headline) -->
+      <div class="card c-steps">
+        <div class="label" style="text-align:center">Spring Walkathon</div>
+        <div class="big">8,420<span class="unit">steps today</span></div>
+        <div class="tag-line">Company challenge · Day 12 of 21</div>
+        <svg class="pace-viz" viewBox="0 0 240 56" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
           <defs>
-            <linearGradient id="mindRing" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0" stop-color="#ff5d9d"/>
+            <linearGradient id="heroPaceYou" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0" stop-color="#4d8bff"/>
               <stop offset="1" stop-color="#b570ff"/>
             </linearGradient>
           </defs>
-          <circle cx="60" cy="60" r="46" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="10"/>
-          <circle cx="60" cy="60" r="46" fill="none" stroke="url(#mindRing)" stroke-width="10" stroke-linecap="round"
-                  stroke-dasharray="289" stroke-dashoffset="96" transform="rotate(-90 60 60)"/>
-          <text x="60" y="58" text-anchor="middle" font-family="Inter" font-size="22" font-weight="500" fill="#f2f4ff">12</text>
-          <text x="60" y="74" text-anchor="middle" font-family="Inter" font-size="10" fill="#848aae" letter-spacing="1">OF 15 MIN</text>
+          <text x="0" y="11" font-family="Inter" font-size="9" fill="#848aae" letter-spacing="1.2">PACE VS MEDIAN (TODAY)</text>
+          <rect x="0" y="20" width="240" height="8" rx="4" fill="rgba(255,255,255,0.08)"/>
+          <rect x="0" y="20" width="168" height="8" rx="4" fill="url(#heroPaceYou)"/>
+          <line x1="144" y1="16" x2="144" y2="36" stroke="rgba(255,255,255,0.35)" stroke-width="1" stroke-dasharray="2 3"/>
+          <circle cx="168" cy="24" r="5" fill="#f2f4ff" stroke="#4d8bff" stroke-width="1.5"/>
+          <!-- <text x="144" y="50" text-anchor="middle" font-family="Inter" font-size="8" fill="#848aae">Median 7.2k</text> -->
+          <text x="168" y="42" text-anchor="middle" font-family="Inter" font-size="8" font-weight="600" fill="#4d8bff">You 8.4k</text>
         </svg>
-        <div class="tag-line" style="text-align:center;margin-top:12px">AI-guided box breathing. Reflection up next.</div>
+        <div class="pace-legend">
+          <span>+1.2k above challenge median</span>
+          <span class="pace-ok">On pace</span>
+        </div>
+        <div class="bar"><i style="width:68%;background:linear-gradient(90deg,#4d8bff,#b570ff)"></i></div>
+        <div class="chip"><span class="sq" style="background:#4d8bff"></span>Engineering leads your division</div>
       </div>
 
-      <!-- Card 3: Nutrition (AI meal photo scoring, Cal AI-inspired) -->
-      <div class="card c-nutri">
-        <div class="label" style="display:flex;align-items:center;gap:6px;justify-content:center">
-          <!-- <svg width="12" height="12" viewBox="0 0 24 24" fill="none" aria-hidden="true" style="flex:none">
-            <path d="M3 7h3l1.5-2h9L18 7h3v12H3V7z" stroke="#848aae" stroke-width="1.6" stroke-linejoin="round"/>
-            <circle cx="12" cy="13" r="3.5" stroke="#848aae" stroke-width="1.6"/>
-          </svg> -->
-          Nutrition
+      <!-- Card 2: Leaderboard snapshot -->
+      <div class="card c-mind">
+        <div class="label">Leaderboard</div>
+        <div class="big" style="font-size:28px;letter-spacing:-0.03em">This week</div>
+        <div class="tag-line">Live ranks · all employees in challenge</div>
+        <div class="lb-rows">
+          <div class="lb-row"><span class="lb-rank">1</span><span class="lb-name">A. Chen</span><span class="lb-val">92.4k</span></div>
+          <div class="lb-row"><span class="lb-rank">2</span><span class="lb-name">M. Okonkwo</span><span class="lb-val">88.1k</span></div>
+          <div class="lb-row you"><span class="lb-rank">5</span><span class="lb-name">You</span><span class="lb-val">81.2k</span></div>
         </div>
-        <div class="big">87<span class="unit">/ 100</span></div>
-        <div class="tag-line">AI scored 14 meal photos this week.</div>
-        <svg viewBox="0 0 200 44" preserveAspectRatio="none" style="width:100%;height:40px;margin-top:14px;display:block" aria-hidden="true">
+        <div class="chip"><span class="sq" style="background:#ff5d9d"></span>312 people · you moved up 2 spots</div>
+      </div>
+
+      <!-- Card 3: Steps trend + week-at-a-glance (calendar strip) -->
+      <div class="card c-nutri">
+        <div class="label">Since challenge start</div>
+        <div class="big">118k<span class="unit">total steps</span></div>
+        <div class="tag-line">7-day average <strong style="color:var(--ink);font-weight:500">11.2k</strong></div>
+        <svg viewBox="0 0 200 44" preserveAspectRatio="none" style="width:100%;height:40px;margin-top:12px;display:block" aria-hidden="true">
           <defs>
-            <linearGradient id="heroSparkG" x1="0" x2="1" y1="0" y2="0">
+            <linearGradient id="heroStepsTrendG" x1="0" x2="1" y1="0" y2="0">
               <stop offset="0" stop-color="#ff8a4c"/>
               <stop offset="0.5" stop-color="#ff5d9d"/>
               <stop offset="1" stop-color="#b570ff"/>
             </linearGradient>
-            <linearGradient id="heroSparkFill" x1="0" x2="0" y1="0" y2="1">
-              <stop offset="0" stop-color="#ff5d9d" stop-opacity="0.28"/>
-              <stop offset="1" stop-color="#ff5d9d" stop-opacity="0"/>
+            <linearGradient id="heroStepsTrendFill" x1="0" x2="0" y1="0" y2="1">
+              <stop offset="0" stop-color="#4d8bff" stop-opacity="0.22"/>
+              <stop offset="1" stop-color="#4d8bff" stop-opacity="0"/>
             </linearGradient>
           </defs>
-          <path d="M0,36 L28,30 L56,33 L84,22 L112,18 L140,12 L168,10 L200,6 L200,44 L0,44 Z"
-                fill="url(#heroSparkFill)"/>
-          <polyline points="0,36 28,30 56,33 84,22 112,18 140,12 168,10 200,6"
-                    fill="none" stroke="url(#heroSparkG)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-          <circle cx="200" cy="6" r="3.5" fill="#ff5d9d"/>
+          <path d="M0,38 L29,32 L57,35 L86,24 L114,20 L143,14 L171,12 L200,8 L200,44 L0,44 Z" fill="url(#heroStepsTrendFill)"/>
+          <polyline points="0,38 29,32 57,35 86,24 114,20 143,14 171,12 200,8"
+                    fill="none" stroke="url(#heroStepsTrendG)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="200" cy="8" r="3.5" fill="#4d8bff"/>
         </svg>
-        <div class="chip"><span class="sq" style="background:#ff5d9d"></span>+15 from last week</div>
+        <div class="week-strip" aria-hidden="true">
+          <div class="week-day"><span class="w">Mon</span><span class="dot"></span></div>
+          <div class="week-day"><span class="w">Tue</span><span class="dot on"></span></div>
+          <div class="week-day"><span class="w">Wed</span><span class="dot on"></span></div>
+          <div class="week-day"><span class="w">Thu</span><span class="dot on"></span></div>
+          <div class="week-day"><span class="w">Fri</span><span class="dot on"></span></div>
+          <div class="week-day"><span class="w">Sat</span><span class="dot"></span></div>
+          <div class="week-day"><span class="w">Sun</span><span class="dot on"></span></div>
+        </div>
+        <div class="chip"><span class="sq" style="background:#b570ff"></span>Trending vs last month's baseline</div>
       </div>
     </div>
   </div>
