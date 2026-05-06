@@ -962,122 +962,86 @@
         <!-- AI transformation pipeline graphic -->
         <svg viewBox="0 0 520 520" width="100%" height="100%" y="-48" style="transform-origin: top left;">
           <defs>
-            <radialGradient id="plAmbient" cx="50%" cy="50%" r="58%">
-              <stop offset="0" stop-color="#ff5d9d" stop-opacity="0.15"/>
-              <stop offset="0.55" stop-color="#b570ff" stop-opacity="0.08"/>
+            <radialGradient id="plAmbient" cx="50%" cy="50%" r="62%">
+              <stop offset="0" stop-color="#ff5d9d" stop-opacity="0.18"/>
+              <stop offset="0.55" stop-color="#b570ff" stop-opacity="0.1"/>
               <stop offset="1" stop-color="#070b1e" stop-opacity="0"/>
             </radialGradient>
-            <linearGradient id="plPipeG" x1="0" x2="1" y1="0" y2="0">
+            <linearGradient id="plBrandFlow" x1="0" x2="1" y1="0" y2="0">
               <stop offset="0" stop-color="#ff8a4c"/>
-              <stop offset="0.5" stop-color="#ff5d9d"/>
+              <stop offset="0.45" stop-color="#ff5d9d"/>
               <stop offset="1" stop-color="#4d8bff"/>
             </linearGradient>
-            <linearGradient id="plCoreG" x1="0" x2="1" y1="0" y2="1">
+            <linearGradient id="plCore" x1="0" x2="1" y1="0" y2="1">
               <stop offset="0" stop-color="#ff8a4c"/>
-              <stop offset="0.36" stop-color="#ff5d9d"/>
-              <stop offset="0.7" stop-color="#b570ff"/>
+              <stop offset="0.4" stop-color="#ff5d9d"/>
+              <stop offset="0.75" stop-color="#b570ff"/>
               <stop offset="1" stop-color="#4d8bff"/>
             </linearGradient>
           </defs>
 
-          <circle cx="260" cy="260" r="240" fill="url(#plAmbient)"/>
+          <circle cx="260" cy="260" r="242" fill="url(#plAmbient)"/>
 
-          <!-- left: raw employee signals -->
-          <g transform="translate(18 88)">
-            <rect x="0" y="0" width="154" height="320" rx="22" fill="rgba(17,24,52,0.92)" stroke="rgba(255,255,255,0.1)"/>
-            <text x="18" y="34" fill="rgba(255,255,255,0.68)" font-size="12" letter-spacing="0.12em">INPUT SIGNALS</text>
-            <text x="18" y="58" fill="#ffffff" font-size="18" font-family="Instrument Serif" font-style="italic">What AI learns</text>
+          <!-- canvas frame -->
+    
+          <g transform="translate(-64 0)">
 
-            <g transform="translate(14 84)">
-              <rect x="0" y="0" width="126" height="34" rx="17" fill="rgba(255,255,255,0.08)"/>
-              <circle cx="18" cy="17" r="6.5" fill="#ff8a4c"/>
-              <text x="34" y="22" fill="#dbe2ff" font-size="11">Activity pattern</text>
-            </g>
-            <g transform="translate(14 128)">
-              <rect x="0" y="0" width="126" height="34" rx="17" fill="rgba(255,255,255,0.08)"/>
-              <circle cx="18" cy="17" r="6.5" fill="#ff5d9d"/>
-              <text x="34" y="22" fill="#dbe2ff" font-size="11">Mood check-ins</text>
-            </g>
-            <g transform="translate(14 172)">
-              <rect x="0" y="0" width="126" height="34" rx="17" fill="rgba(255,255,255,0.08)"/>
-              <circle cx="18" cy="17" r="6.5" fill="#b570ff"/>
-              <text x="34" y="22" fill="#dbe2ff" font-size="11">Nutrition habits</text>
-            </g>
-            <g transform="translate(14 216)">
-              <rect x="0" y="0" width="126" height="34" rx="17" fill="rgba(255,255,255,0.08)"/>
-              <circle cx="18" cy="17" r="6.5" fill="#4d8bff"/>
-              <text x="34" y="22" fill="#dbe2ff" font-size="11">History</text>
-            </g>
-            <g transform="translate(14 260)">
-              <rect x="0" y="0" width="126" height="34" rx="17" fill="rgba(255,255,255,0.08)"/>
-              <circle cx="18" cy="17" r="6.5" fill="#9cc2ff"/>
-              <text x="34" y="22" fill="#dbe2ff" font-size="11">Benefit usage</text>
-            </g>
+          <!-- left side: before -->
+          <text x="66" y="126" fill="rgba(255,255,255,0.6)" font-size="11" letter-spacing="0.14em">THEN</text>
+          <text x="66" y="154" fill="#f2f4ff" font-size="24" font-family="Instrument Serif" font-style="italic">Challenge spark</text>
+          <text x="66" y="178" fill="#aeb6d9" font-size="12">worked for the usual few.</text>
+
+          <g transform="translate(66 220)">
+            <rect x="0" y="0" width="156" height="20" rx="10" fill="rgba(255,255,255,0.08)"/>
+            <rect x="0" y="32" width="156" height="20" rx="10" fill="rgba(255,255,255,0.08)"/>
+            <rect x="0" y="64" width="156" height="20" rx="10" fill="rgba(255,255,255,0.08)"/>
+            <rect x="0" y="96" width="156" height="20" rx="10" fill="rgba(255,255,255,0.08)"/>
+
+            <rect x="0" y="0" width="56" height="20" rx="10" fill="rgba(255,93,157,0.58)"/>
+            <rect x="0" y="32" width="44" height="20" rx="10" fill="rgba(181,112,255,0.52)"/>
+            <rect x="0" y="64" width="34" height="20" rx="10" fill="rgba(77,139,255,0.5)"/>
+            <rect x="0" y="96" width="22" height="20" rx="10" fill="rgba(255,255,255,0.34)"/>
+          </g>
           </g>
 
-          <!-- flow from inputs to core -->
-          <g fill="none" stroke="url(#plPipeG)" stroke-width="2.2" stroke-linecap="round" opacity="0.95">
-            <path d="M176 190 C 206 190, 216 202, 224 210 C 230 216, 233 219, 236 222"/>
-            <path d="M176 232 C 208 232, 220 234, 236 236"/>
-            <path d="M176 274 C 208 274, 220 260, 236 250"/>
-            <path d="M176 316 C 208 316, 220 286, 236 262"/>
-            <path d="M176 358 C 206 358, 216 338, 224 320 C 230 304, 233 288, 236 274"/>
+
+          <!-- center core -->
+          <g transform="translate(260 254)">
+            <circle cx="0" cy="0" r="88" fill="rgba(77,139,255,0.08)" stroke="rgba(255,255,255,0.16)" stroke-dasharray="4 7"/>
+            <circle cx="0" cy="0" r="60" fill="rgba(181,112,255,0.16)"/>
+            <circle cx="0" cy="0" r="40" fill="rgba(255,93,157,0.18)"/>
+            <circle cx="0" cy="0" r="24" fill="url(#plCore)"/>
+            <text x="0" y="-104" text-anchor="middle" fill="rgba(255,255,255,0.74)" font-size="10" letter-spacing="0.09em">Goal AI</text>
+            <text x="0" y="4" text-anchor="middle" fill="#ffffff" font-size="9.5" letter-spacing="0.06em">INTELLIGENT CORE</text>
           </g>
 
-          <!-- center: intelligence layer -->
-          <g transform="translate(260 246)">
-            <circle cx="0" cy="0" r="82" fill="rgba(77,139,255,0.08)" stroke="rgba(255,255,255,0.14)" stroke-dasharray="4 7"/>
-            <circle cx="0" cy="0" r="60" fill="rgba(181,112,255,0.12)"/>
-            <circle cx="0" cy="0" r="42" fill="rgba(255,93,157,0.16)"/>
-            <circle cx="0" cy="0" r="27" fill="url(#plCoreG)"/>
-            <text x="0" y="-100" text-anchor="middle" fill="#e8ebff" font-size="9.5" letter-spacing="0.07em">INTELLIGENCE LAYER</text>
-            <!-- <text x="0" y="4" text-anchor="middle" fill="#ffffff" font-size="10" letter-spacing="0.06em">AI ORCHESTRATOR</text> -->
+          
 
-            <!-- engine labels -->
-            <!-- <rect x="-52" y="-102" width="104" height="20" rx="10" fill="rgba(255,255,255,0.1)"/>
-            <text x="0" y="-88" text-anchor="middle" fill="#f4f6ff" font-size="9.5">Team Match</text>
-            <rect x="-114" y="-12" width="82" height="20" rx="10" fill="rgba(255,255,255,0.1)"/>
-            <text x="-73" y="2" text-anchor="middle" fill="#f4f6ff" font-size="9.5">Goals</text>
-            <rect x="32" y="-12" width="82" height="20" rx="10" fill="rgba(255,255,255,0.1)"/>
-            <text x="73" y="2" text-anchor="middle" fill="#f4f6ff" font-size="9.5">Coaching</text>
-            <rect x="-56" y="82" width="112" height="20" rx="10" fill="rgba(255,255,255,0.1)"/>
-            <text x="0" y="96" text-anchor="middle" fill="#f4f6ff" font-size="9.5">Benefits Route</text> -->
+          <g transform="translate(64 0)">
+             <text x="306" y="126" fill="rgba(255,255,255,0.7)" font-size="11" letter-spacing="0.14em">NOW</text>
+          <text x="306" y="154" fill="#f2f4ff" font-size="24" font-family="Instrument Serif" font-style="italic">Challenge</text>
+          <text x="306" y="180" fill="#f2f4ff" font-size="24" font-family="Instrument Serif" font-style="italic">intelligence</text>
+          <text x="306" y="202" fill="#c2c9e6" font-size="12">works for everyone.</text>
+          </g>
+          <!-- right side: after -->
+         
+
+          <g transform="translate(370 220)">
+            <rect x="0" y="0" width="148" height="20" rx="10" fill="rgba(255,255,255,0.1)"/>
+            <rect x="0" y="32" width="148" height="20" rx="10" fill="rgba(255,255,255,0.1)"/>
+            <rect x="0" y="64" width="148" height="20" rx="10" fill="rgba(255,255,255,0.1)"/>
+            <rect x="0" y="96" width="148" height="20" rx="10" fill="rgba(255,255,255,0.1)"/>
+
+            <rect x="0" y="0" width="132" height="20" rx="10" fill="url(#plBrandFlow)"/>
+            <rect x="0" y="32" width="126" height="20" rx="10" fill="url(#plBrandFlow)" opacity="0.92"/>
+            <rect x="0" y="64" width="122" height="20" rx="10" fill="url(#plBrandFlow)" opacity="0.88"/>
+            <rect x="0" y="96" width="116" height="20" rx="10" fill="url(#plBrandFlow)" opacity="0.84"/>
           </g>
 
-          <!-- right: personalized outputs -->
-          <g transform="translate(342 76)">
-            <rect x="0" y="0" width="170" height="344" rx="24" fill="rgba(18,25,56,0.9)" stroke="rgba(255,255,255,0.12)"/>
-            <text x="18" y="34" fill="rgba(255,255,255,0.68)" font-size="12" letter-spacing="0.12em">ADAPTIVE OUTPUTS</text>
-            <text x="18" y="58" fill="#ffffff" font-size="18" font-family="Instrument Serif" font-style="italic">What employees feel</text>
+          <rect x="306" y="344" width="206" height="34" rx="17" fill="rgba(77,139,255,0.16)" stroke="rgba(77,139,255,0.36)"/>
+          <text x="410" y="366" text-anchor="middle" fill="#d6e6ff" font-size="11">Personalized. Adaptive. Inclusive.</text>
 
-            <!-- persona cards -->
-            <g transform="translate(14 84)">
-              <rect x="0" y="0" width="142" height="72" rx="14" fill="rgba(255,255,255,0.08)"/>
-              <circle cx="20" cy="18" r="7" fill="#ff8a4c"/>
-              <text x="34" y="22" fill="#ffffff" font-size="11">Parent persona</text>
-              <text x="12" y="44" fill="#dbe2ff" font-size="10">10-min home workouts</text>
-              <text x="12" y="59" fill="#dbe2ff" font-size="10">Lunch walk goals</text>
-            </g>
-            <g transform="translate(14 166)">
-              <rect x="0" y="0" width="142" height="72" rx="14" fill="rgba(255,255,255,0.08)"/>
-              <circle cx="20" cy="18" r="7" fill="#b570ff"/>
-              <text x="34" y="22" fill="#ffffff" font-size="11">Beginner persona</text>
-              <text x="12" y="44" fill="#dbe2ff" font-size="10">Low-friction first wins</text>
-              <text x="12" y="59" fill="#dbe2ff" font-size="10">Confidence pacing</text>
-            </g>
-            <g transform="translate(14 248)">
-              <rect x="0" y="0" width="142" height="76" rx="14" fill="rgba(255,255,255,0.08)"/>
-              <circle cx="20" cy="18" r="7" fill="#4d8bff"/>
-              <text x="34" y="22" fill="#ffffff" font-size="11">High performer</text>
-              <text x="12" y="44" fill="#dbe2ff" font-size="10">Advanced targets</text>
-              <text x="12" y="59" fill="#dbe2ff" font-size="10">Recovery prompts</text>
-            </g>
-          </g>
-
-          <!-- feedback loop -->
-          <path d="M410 430 C 340 485, 210 486, 136 425" fill="none" stroke="rgba(255,255,255,0.22)" stroke-width="1.7" stroke-dasharray="3 6"/>
-          <path d="M136 425 L149.2 427.8 L141.3 437.5 Z" fill="rgba(255,255,255,0.36)"/>
-          <text x="258" y="490" text-anchor="middle" fill="rgba(255,255,255,0.72)" font-size="9.5" letter-spacing="0.06em">LIVE FEEDBACK LOOP: LEARNS, ADAPTS, IMPROVES</text>
+          <text x="260" y="428" text-anchor="middle" fill="rgba(255,255,255,0.74)" font-size="11" letter-spacing="0.08em">THE FORMULA STILL WORKS. NOW IT WORKS FOR EVERYONE.</text>
         </svg>
       </div>
     </div>
@@ -1088,7 +1052,7 @@
 <section style="padding-top:60px;padding-bottom:80px">
   <div class="container x-narrow reveal">
     <div class="center">
-      <h2>A new operating system <br/>for <span class="serif" style="color: var(--accent-2)">human performance.</span></h2>
+      <h2>A new operating system <br/>for <span class="serif" style="color: var(--accent)">human performance.</span></h2>
       <p class="lead mt-m" style="max-width:60ch;margin-left:auto;margin-right:auto">
         Goal AI doesn't just freshen up the old model. It replaces it.
         Intelligent engines working in concert. Every one of them personal,
@@ -1454,7 +1418,7 @@
         </div>
       </div>
       <div class="copy reveal delay-1">
-        <h2>A coach who actually <span class="serif" style="color: var(--accent-2)">knows you.</span></h2>
+        <h2>A coach who actually <span class="serif" style="color: var(--accent)">knows you.</span></h2>
         <p class="lead">
           No templates. No blanket recommendations. Goal AI listens to your data,
           your feedback, and your actions, and writes the plan for the one human
@@ -1522,36 +1486,34 @@
                 <rect x="232" y="25" width="82" height="6" rx="3" fill="#4d8bff"/>
               </g>
 
-              <!-- Row 4: Garmin -->
+              <!-- Row 4: MyFitnessPal -->
               <g transform="translate(0 230)">
                 <rect x="0" y="0" width="340" height="56" rx="16" fill="rgba(11,19,44,0.9)" stroke="rgba(255,255,255,0.08)"/>
-                <rect x="14" y="14" width="68" height="28" rx="14" fill="rgba(255,138,76,0.15)" stroke="rgba(255,138,76,0.4)"/>
-                <text x="48" y="33" text-anchor="middle" font-family="Inter" font-weight="600" font-size="10" fill="#ff8a4c" letter-spacing="0.8">GARMIN</text>
-                <!-- <text x="98" y="34" font-family="Inter" font-size="13" fill="#c8cde6">HRV</text> -->
-                <text x="168" y="34" font-family="Inter" font-weight="600" font-size="14" fill="#f2f4ff">48 ms</text>
-                <path d="M224 40 L240 34 L256 38 L272 26 L288 30 L304 22 L320 28"
-                      stroke="#ff8a4c" stroke-width="2" fill="none" stroke-linecap="round"/>
+                <rect x="14" y="14" width="96" height="28" rx="14" fill="rgba(255,138,76,0.15)" stroke="rgba(255,138,76,0.4)"/>
+                <text x="62" y="33" text-anchor="middle" font-family="Inter" font-weight="600" font-size="9" fill="#ff8a4c" letter-spacing="0.8">MYFITNESSPAL</text>
+                <!-- <text x="182" y="34" font-family="Inter" font-size="12" fill="#848aae">Nutrition log</text> -->
+                <rect x="254" y="20" width="72" height="20" rx="7" fill="rgba(255,138,76,0.22)"/>
+                <text x="290" y="34" text-anchor="middle" font-family="Inter" font-weight="600" font-size="9" fill="#ff8a4c" letter-spacing="0.8">1,820 KCAL</text>
               </g>
 
-              <!-- Row 5: Calendar -->
+              <!-- Row 5: Google Fit -->
               <g transform="translate(0 296)">
                 <rect x="0" y="0" width="340" height="56" rx="16" fill="rgba(11,19,44,0.9)" stroke="rgba(255,255,255,0.08)"/>
-                <rect x="14" y="14" width="54" height="28" rx="14" fill="rgba(255,93,157,0.15)" stroke="rgba(255,93,157,0.4)"/>
-                <text x="41" y="33" text-anchor="middle" font-family="Inter" font-weight="600" font-size="10" fill="#ff5d9d" letter-spacing="0.8">CAL</text>
-                <!-- <text x="84" y="34" font-family="Inter" font-size="13" fill="#c8cde6">Next · 2pm</text> -->
-                <text x="186" y="34" font-family="Inter" font-size="12" fill="#848aae">Q2 review</text>
-                <rect x="268" y="20" width="58" height="20" rx="7" fill="rgba(255,93,157,0.22)"/>
-                <text x="297" y="34" text-anchor="middle" font-family="Inter" font-weight="600" font-size="9" fill="#ff5d9d" letter-spacing="0.8">45 MIN</text>
+                <rect x="14" y="14" width="88" height="28" rx="14" fill="rgba(77,139,255,0.15)" stroke="rgba(77,139,255,0.4)"/>
+                <text x="58" y="33" text-anchor="middle" font-family="Inter" font-weight="600" font-size="10" fill="#4d8bff" letter-spacing="0.8">GOOGLE FIT</text>
+                <!-- <text x="178" y="34" font-family="Inter" font-size="12" fill="#848aae">Move Minutes</text> -->
+                <rect x="268" y="20" width="58" height="20" rx="7" fill="rgba(77,139,255,0.22)"/>
+                <text x="297" y="34" text-anchor="middle" font-family="Inter" font-weight="600" font-size="9" fill="#4d8bff" letter-spacing="0.8">62 MIN</text>
               </g>
 
-              <!-- Row 6: Mood -->
+              <!-- Row 6: Fitbit -->
               <g transform="translate(0 362)">
                 <rect x="0" y="0" width="340" height="56" rx="16" fill="rgba(11,19,44,0.9)" stroke="rgba(255,255,255,0.08)"/>
-                <rect x="14" y="14" width="66" height="28" rx="14" fill="rgba(181,112,255,0.15)" stroke="rgba(181,112,255,0.4)"/>
-                <text x="47" y="33" text-anchor="middle" font-family="Inter" font-weight="600" font-size="10" fill="#b570ff" letter-spacing="0.8">MOOD</text>
-                <!-- <text x="96" y="34" font-family="Inter" font-size="13" fill="#c8cde6">Check-in</text> -->
-                <text x="248" y="36" font-family="Instrument Serif" font-style="italic" font-size="18" fill="#b570ff">good</text>
-                <text x="290" y="34" font-family="Inter" font-size="11" fill="#848aae">1h ago</text>
+                <rect x="14" y="14" width="64" height="28" rx="14" fill="rgba(181,112,255,0.15)" stroke="rgba(181,112,255,0.4)"/>
+                <text x="46" y="33" text-anchor="middle" font-family="Inter" font-weight="600" font-size="10" fill="#b570ff" letter-spacing="0.8">FITBIT</text>
+                <!-- <text x="182" y="34" font-family="Inter" font-size="12" fill="#848aae">Readiness</text> -->
+                <rect x="268" y="20" width="58" height="20" rx="7" fill="rgba(181,112,255,0.22)"/>
+                <text x="297" y="34" text-anchor="middle" font-family="Inter" font-weight="600" font-size="9" fill="#b570ff" letter-spacing="0.8">78/100</text>
               </g>
 
               <!-- Row 7: Strava -->
@@ -1559,7 +1521,6 @@
                 <rect x="0" y="0" width="340" height="56" rx="16" fill="rgba(11,19,44,0.9)" stroke="rgba(255,255,255,0.08)"/>
                 <rect x="14" y="14" width="66" height="28" rx="14" fill="rgba(255,138,76,0.15)" stroke="rgba(255,138,76,0.4)"/>
                 <text x="47" y="33" text-anchor="middle" font-family="Inter" font-weight="600" font-size="10" fill="#ff8a4c" letter-spacing="0.8">STRAVA</text>
-                <!-- <text x="96" y="34" font-family="Inter" font-size="13" fill="#c8cde6">Easy run</text> -->
                 <text x="186" y="34" font-family="Inter" font-weight="600" font-size="14" fill="#f2f4ff">5.2 km</text>
                 <path d="M250 40 L262 34 L274 38 L286 30 L298 34 L310 26 L322 30"
                       stroke="#ff8a4c" stroke-width="2" fill="none" stroke-linecap="round"/>
@@ -1832,7 +1793,7 @@
         </div>
       </div>
       <div class="copy reveal delay-1">
-        <h2>Data with a <span class="serif" style="color: var(--accent-2)">point of view.</span></h2>
+        <h2>Data with a <span class="serif" style="color: var(--accent)">point of view.</span></h2>
         <p class="lead">
           Your sleep, movement, nutrition, mood. Goal AI turns every signal into something
           you can act on. Patterns only AI could spot. Trends hiding in the noise.
@@ -1949,7 +1910,7 @@
   <div class="container">
     <div class="global">
       <div class="reveal">
-        <h2>Built for every body. <span class="serif" style="color: var(--accent-2)">In every language.</span></h2>
+        <h2>Built for every body. <span class="serif" style="color: var(--accent)">In every language.</span></h2>
         <p class="lead mt-m">
           AI translation, AI localization, AI cultural nuance, not bolted on, native.
           Your Mumbai office, your Madrid office, your Minneapolis office. All one team.
@@ -2209,7 +2170,7 @@
 <section>
   <div class="container narrow">
     <div class="transcend reveal">
-      <h2>A challenge is just <span class="serif" style="color: var(--accent-2)">the beginning.</span></h2>
+      <h2>A challenge is just <span class="serif" style="color: var(--accent)">the beginning.</span></h2>
       <p class="lead">
         Challenges aren't the destination. They are a doorway.
         To a healthier workforce. To deeper benefits utilization. To the
@@ -2262,7 +2223,7 @@
 <section id="demo" style="padding-top:80px">
   <div class="container narrow">
     <div class="cta-big reveal">
-      <h2>Reignite <span class="serif" style="color: var(--accent-2)">engagement.</span><br/>Reinvent <span class="serif" style="color: var(--accent-2)">wellbeing.</span></h2>
+      <h2>Reignite <span class="serif" style="color: var(--accent)">engagement.</span><br/>Reinvent <span class="serif" style="color: var(--accent-2)">wellbeing.</span></h2>
       <p class="lead mt-m" style="max-width:54ch;margin-left:auto;margin-right:auto">
         Your people deserve more than another step challenge.
         Goal AI is shipping the next chapter of employee wellbeing,
