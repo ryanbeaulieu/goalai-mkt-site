@@ -100,7 +100,7 @@
   .container.narrow{max-width:980px}
   .container.x-narrow{max-width:780px}
 
-  section{position:relative;padding:140px 0}
+  section{position:relative;padding:160px 0}
   @media (max-width:720px){section{padding:96px 0}}
 
   h1,h2,h3,h4{margin:0;letter-spacing:-0.03em;font-weight:500;color:var(--ink)}
@@ -439,16 +439,17 @@
   .person:hover{
     border-color:var(--line-2);
     transform:translateY(-3px);
-    & .portrait {
-      background-color: rgb(from var(--accent-4) r g b / 1);
-    }
   }
   .portrait{
     width:120px;height:120px;flex:0 0 120px;
     border-radius:50%;
-    background-color: rgb(from var(--accent-4) r g b / 0.5);
+    background-color: var(--bg);
     overflow:hidden;position:relative;
-    box-shadow:0 0 0 1px rgba(255,255,255,0.06), 0 18px 40px -20px rgba(181,112,255,0.35);
+    box-shadow:
+      inset 0 0 22px rgba(181,112,255,0.22),
+      inset 0 0 52px rgba(181,112,255,0.12),
+      0 0 0 1px rgba(255,255,255,0.06),
+      0 18px 40px -20px rgba(181,112,255,0.35);
     transition: background-color 0.3s ease-out;
   }
   @media (max-width:520px){.portrait{width:96px;height:96px;flex:0 0 96px}}
@@ -460,7 +461,7 @@
   .portrait svg{width:100%;height:100%;display:block}
   .person .meta{display:flex;flex-direction:column;gap:4px;flex:1;min-width:0}
   .person h3{font-size:20px}
-  .person .role{font-family:"Instrument Serif",serif;font-style:italic;color:var(--accent);font-size:16px}
+  .person .role{font-family:"Instrument Serif",serif;font-style:italic;color:var(--accent-4);font-size:16px}
   .person p{font-size:14px;color:var(--muted);margin-top:8px;line-height:1.5}
 
   /* -------------------------------------------------
@@ -888,38 +889,38 @@
 
       <!-- Card 2: Leaderboard snapshot -->
       <div class="card c-mind">
-        <div class="label">Leaderboard</div>
+        <div class="label">Mental Wellbeing Challenge</div>
         <div class="big" style="font-size:28px;letter-spacing:-0.03em">This week</div>
-        <div class="tag-line">Live ranks · all employees in challenge</div>
+        <div class="tag-line">Live ranks · mindfulness points earned</div>
         <div class="lb-rows">
-          <div class="lb-row"><span class="lb-rank">1</span><span class="lb-name">A. Chen</span><span class="lb-val">92.4k</span></div>
-          <div class="lb-row"><span class="lb-rank">2</span><span class="lb-name">M. Okonkwo</span><span class="lb-val">88.1k</span></div>
-          <div class="lb-row you"><span class="lb-rank">5</span><span class="lb-name">You</span><span class="lb-val">81.2k</span></div>
+          <div class="lb-row"><span class="lb-rank">1</span><span class="lb-name">A. Chen</span><span class="lb-val">248 pts</span></div>
+          <div class="lb-row"><span class="lb-rank">2</span><span class="lb-name">M. Okonkwo</span><span class="lb-val">236 pts</span></div>
+          <div class="lb-row you"><span class="lb-rank">5</span><span class="lb-name">You</span><span class="lb-val">219 pts</span></div>
         </div>
-        <div class="chip"><span class="sq" style="background:#ff5d9d"></span>312 people · you moved up 2 spots</div>
+        <div class="chip"><span class="sq" style="background:#ff5d9d"></span>3,312 participants · up 2 spots</div>
       </div>
 
-      <!-- Card 3: Steps trend + week-at-a-glance (calendar strip) -->
+      <!-- Card 3: Nutrition trend + week-at-a-glance (calendar strip) -->
       <div class="card c-nutri">
-        <div class="label">Since challenge start</div>
-        <div class="big">118k<span class="unit">total steps</span></div>
-        <div class="tag-line">7-day average <strong style="color:var(--ink);font-weight:500">11.2k</strong></div>
+        <div class="label">Nutrition challenge</div>
+        <div class="big">84<span class="unit"> meals logged</span></div>
+        <div class="tag-line">7-day average <strong style="color:var(--ink);font-weight:500">2.6/day</strong></div>
         <svg viewBox="0 0 200 44" preserveAspectRatio="none" style="width:100%;height:40px;margin-top:12px;display:block" aria-hidden="true">
           <defs>
-            <linearGradient id="heroStepsTrendG" x1="0" x2="1" y1="0" y2="0">
+            <linearGradient id="heroNutritionTrendG" x1="0" x2="1" y1="0" y2="0">
               <stop offset="0" stop-color="#ff8a4c"/>
               <stop offset="0.5" stop-color="#ff5d9d"/>
               <stop offset="1" stop-color="#b570ff"/>
             </linearGradient>
-            <linearGradient id="heroStepsTrendFill" x1="0" x2="0" y1="0" y2="1">
+            <linearGradient id="heroNutritionTrendFill" x1="0" x2="0" y1="0" y2="1">
               <stop offset="0" stop-color="#4d8bff" stop-opacity="0.22"/>
               <stop offset="1" stop-color="#4d8bff" stop-opacity="0"/>
             </linearGradient>
           </defs>
-          <path d="M0,38 L29,32 L57,35 L86,24 L114,20 L143,14 L171,12 L200,8 L200,44 L0,44 Z" fill="url(#heroStepsTrendFill)"/>
-          <polyline points="0,38 29,32 57,35 86,24 114,20 143,14 171,12 200,8"
-                    fill="none" stroke="url(#heroStepsTrendG)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-          <circle cx="200" cy="8" r="3.5" fill="#4d8bff"/>
+          <path d="M0,34 L29,30 L57,32 L86,26 L114,23 L143,17 L171,14 L200,11 L200,44 L0,44 Z" fill="url(#heroNutritionTrendFill)"/>
+          <polyline points="0,34 29,30 57,32 86,26 114,23 143,17 171,14 200,11"
+                    fill="none" stroke="url(#heroNutritionTrendG)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="200" cy="11" r="3.5" fill="#4d8bff"/>
         </svg>
         <div class="week-strip" aria-hidden="true">
           <div class="week-day"><span class="w">Mon</span><span class="dot"></span></div>
@@ -930,7 +931,7 @@
           <div class="week-day"><span class="w">Sat</span><span class="dot"></span></div>
           <div class="week-day"><span class="w">Sun</span><span class="dot on"></span></div>
         </div>
-        <div class="chip"><span class="sq" style="background:#b570ff"></span>Trending vs last month's baseline</div>
+        <div class="chip"><span class="sq" style="background:#b570ff"></span>Consistency up 18% MoM</div>
       </div>
     </div>
   </div>
@@ -941,7 +942,7 @@
   <div class="container">
     <div class="plateau-grid">
       <div class="reveal">
-        <h2>Challenges work. But they're long overdue for an <span class="serif" style="color:var(--accent-4)">upgrade.</span></h2>
+        <h2>Challenges work. But they're long overdue for an <span class="serif" style="color:var(--accent-2)">upgrade.</span></h2>
         <p class="lead mt-m">
           For two decades, employee challenges have been the quiet engine of engagement. The
           spark that activates people, nudges behavior, and opens the door to every other
@@ -958,166 +959,125 @@
       </div>
 
       <div class="plateau-viz reveal delay-2" aria-hidden="true" style="display:flex;justify-content:center;align-items:center;">
-        <!-- Challenge attributes as pills orbiting a ring of people -->
+        <!-- AI transformation pipeline graphic -->
         <svg viewBox="0 0 520 520" width="100%" height="100%" y="-48" style="transform-origin: top left;">
           <defs>
-            <radialGradient id="plAmbient" cx="50%" cy="50%" r="55%">
-              <stop offset="0"   stop-color="#ff5d9d" stop-opacity="0.26"/>
-              <stop offset="0.55" stop-color="#b570ff" stop-opacity="0.12"/>
-              <stop offset="1"   stop-color="#070b1e" stop-opacity="0"/>
+            <radialGradient id="plAmbient" cx="50%" cy="50%" r="58%">
+              <stop offset="0" stop-color="#ff5d9d" stop-opacity="0.15"/>
+              <stop offset="0.55" stop-color="#b570ff" stop-opacity="0.08"/>
+              <stop offset="1" stop-color="#070b1e" stop-opacity="0"/>
             </radialGradient>
-            <linearGradient id="plPer" x1="0" x2="1" y1="0" y2="0">
-              <stop offset="0" stop-color="#ff8a4c"/><stop offset="1" stop-color="#ff5d9d"/>
-            </linearGradient>
-            <linearGradient id="plCol" x1="0" x2="1" y1="0" y2="0">
-              <stop offset="0" stop-color="#ff5d9d"/><stop offset="1" stop-color="#b570ff"/>
-            </linearGradient>
-            <linearGradient id="plAda" x1="0" x2="1" y1="0" y2="0">
-              <stop offset="0" stop-color="#b570ff"/><stop offset="1" stop-color="#4d8bff"/>
-            </linearGradient>
-            <linearGradient id="plGlo" x1="0" x2="1" y1="0" y2="0">
-              <stop offset="0" stop-color="#4d8bff"/><stop offset="1" stop-color="#b570ff"/>
-            </linearGradient>
-            <linearGradient id="plHol" x1="0" x2="1" y1="0" y2="0">
-              <stop offset="0" stop-color="#ff8a4c"/><stop offset="0.5" stop-color="#b570ff"/><stop offset="1" stop-color="#4d8bff"/>
-            </linearGradient>
-            <linearGradient id="plCtr" x1="0" x2="1" y1="0" y2="1">
+            <linearGradient id="plPipeG" x1="0" x2="1" y1="0" y2="0">
               <stop offset="0" stop-color="#ff8a4c"/>
-              <stop offset="0.34" stop-color="#ff5d9d"/>
-              <stop offset="0.66" stop-color="#b570ff"/>
+              <stop offset="0.5" stop-color="#ff5d9d"/>
+              <stop offset="1" stop-color="#4d8bff"/>
+            </linearGradient>
+            <linearGradient id="plCoreG" x1="0" x2="1" y1="0" y2="1">
+              <stop offset="0" stop-color="#ff8a4c"/>
+              <stop offset="0.36" stop-color="#ff5d9d"/>
+              <stop offset="0.7" stop-color="#b570ff"/>
               <stop offset="1" stop-color="#4d8bff"/>
             </linearGradient>
           </defs>
 
-          <!-- ambient glow -->
           <circle cx="260" cy="260" r="240" fill="url(#plAmbient)"/>
 
-          <!-- Subtle orbital ring connecting everyone -->
-          <circle cx="260" cy="260" r="148" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1" stroke-dasharray="2 5"/>
+          <!-- left: raw employee signals -->
+          <g transform="translate(18 88)">
+            <rect x="0" y="0" width="154" height="320" rx="22" fill="rgba(17,24,52,0.92)" stroke="rgba(255,255,255,0.1)"/>
+            <text x="18" y="34" fill="rgba(255,255,255,0.68)" font-size="12" letter-spacing="0.12em">INPUT SIGNALS</text>
+            <text x="18" y="58" fill="#ffffff" font-size="18" font-family="Instrument Serif" font-style="italic">What AI learns</text>
 
-          <!-- =============== CENTER: group of people (abstract, face-less avatars) =============== -->
-          <g transform="translate(260 260)">
-            <!-- center glow -->
-            <circle cx="0" cy="0" r="70" fill="rgba(255,93,157,0.12)"/>
-            <circle cx="0" cy="0" r="48" fill="rgba(181,112,255,0.16)"/>
-
-            <!-- 5 avatar tokens arranged in a tight circle, each a different brand color -->
-            <!-- Person 1 (top) -->
-            <g transform="translate(0 -42)">
-              <circle cx="0" cy="-4" r="9" fill="#ff8a4c"/>
-              <path d="M-16 18 C -16 4, 16 4, 16 18 Z" fill="#ff8a4c"/>
+            <g transform="translate(14 84)">
+              <rect x="0" y="0" width="126" height="34" rx="17" fill="rgba(255,255,255,0.08)"/>
+              <circle cx="18" cy="17" r="6.5" fill="#ff8a4c"/>
+              <text x="34" y="22" fill="#dbe2ff" font-size="11">Activity pattern</text>
             </g>
-            <!-- Person 2 (top-right) -->
-            <g transform="translate(40 -14)">
-              <circle cx="0" cy="-4" r="9" fill="#ff5d9d"/>
-              <path d="M-16 18 C -16 4, 16 4, 16 18 Z" fill="#ff5d9d"/>
+            <g transform="translate(14 128)">
+              <rect x="0" y="0" width="126" height="34" rx="17" fill="rgba(255,255,255,0.08)"/>
+              <circle cx="18" cy="17" r="6.5" fill="#ff5d9d"/>
+              <text x="34" y="22" fill="#dbe2ff" font-size="11">Mood check-ins</text>
             </g>
-            <!-- Person 3 (bottom-right) -->
-            <g transform="translate(26 32)">
-              <circle cx="0" cy="-4" r="9" fill="#b570ff"/>
-              <path d="M-16 18 C -16 4, 16 4, 16 18 Z" fill="#b570ff"/>
+            <g transform="translate(14 172)">
+              <rect x="0" y="0" width="126" height="34" rx="17" fill="rgba(255,255,255,0.08)"/>
+              <circle cx="18" cy="17" r="6.5" fill="#b570ff"/>
+              <text x="34" y="22" fill="#dbe2ff" font-size="11">Nutrition habits</text>
             </g>
-            <!-- Person 4 (bottom-left) -->
-            <g transform="translate(-26 32)">
-              <circle cx="0" cy="-4" r="9" fill="#4d8bff"/>
-              <path d="M-16 18 C -16 4, 16 4, 16 18 Z" fill="#4d8bff"/>
+            <g transform="translate(14 216)">
+              <rect x="0" y="0" width="126" height="34" rx="17" fill="rgba(255,255,255,0.08)"/>
+              <circle cx="18" cy="17" r="6.5" fill="#4d8bff"/>
+              <text x="34" y="22" fill="#dbe2ff" font-size="11">History</text>
             </g>
-            <!-- Person 5 (top-left) -->
-            <g transform="translate(-40 -14)">
-              <circle cx="0" cy="-4" r="9" fill="#b570ff"/>
-              <path d="M-16 18 C -16 4, 16 4, 16 18 Z" fill="#b570ff"/>
-            </g>
-
-            <!-- connecting sparkle dots between them -->
-            <g fill="#ffffff" opacity="0.7">
-              <circle cx="20" cy="-34" r="1.6"/>
-              <circle cx="40" cy="12" r="1.6"/>
-              <circle cx="0" cy="38" r="1.6"/>
-              <circle cx="-40" cy="12" r="1.6"/>
-              <circle cx="-20" cy="-34" r="1.6"/>
+            <g transform="translate(14 260)">
+              <rect x="0" y="0" width="126" height="34" rx="17" fill="rgba(255,255,255,0.08)"/>
+              <circle cx="18" cy="17" r="6.5" fill="#9cc2ff"/>
+              <text x="34" y="22" fill="#dbe2ff" font-size="11">Benefit usage</text>
             </g>
           </g>
 
-          <!-- =============== FLOATING PILLS (orbit around people) =============== -->
-
-          <!-- Personalized · top-left -->
-          <g transform="translate(20 60) rotate(-7)">
-            <rect x="0" y="0" width="200" height="58" rx="29" fill="url(#plPer)"/>
-            <circle cx="32" cy="29" r="15" fill="rgba(255,255,255,0.22)"/>
-            <!-- single person glyph -->
-             <g transform="scale(0.675) translate(16, 12)">
-              <circle cx="32" cy="24" r="4" fill="#ffffff"/>
-              <path d="M22 40 C 26 32, 38 32, 42 40 Z" fill="#ffffff"/>
-             </g>
-            
-            <text x="56" y="36" font-family="Instrument Serif" font-style="italic" font-size="22" fill="#ffffff">Personalized</text>
+          <!-- flow from inputs to core -->
+          <g fill="none" stroke="url(#plPipeG)" stroke-width="2.2" stroke-linecap="round" opacity="0.95">
+            <path d="M176 190 C 206 190, 216 202, 224 210 C 230 216, 233 219, 236 222"/>
+            <path d="M176 232 C 208 232, 220 234, 236 236"/>
+            <path d="M176 274 C 208 274, 220 260, 236 250"/>
+            <path d="M176 316 C 208 316, 220 286, 236 262"/>
+            <path d="M176 358 C 206 358, 216 338, 224 320 C 230 304, 233 288, 236 274"/>
           </g>
 
-          <!-- Collaborative · top-right -->
-          <g transform="translate(290 30) rotate(6)">
-            <rect x="0" y="0" width="210" height="58" rx="29" fill="url(#plCol)"/>
-            <circle cx="34" cy="29" r="15" fill="rgba(255,255,255,0.22)"/>
-            <!-- two-person glyph (overlapping heads + shared base) -->
-             <g transform="scale(0.625) translate(20, 15)">
-              <circle cx="29" cy="24" r="3.6" fill="#ffffff"/>
-              <circle cx="39" cy="24" r="3.6" fill="#ffffff"/>
-              <path d="M20 40 C 24 32, 44 32, 48 40 Z" fill="#ffffff"/>
-             </g>
-            
-            <text x="58" y="36" font-family="Instrument Serif" font-style="italic" font-size="22" fill="#ffffff">Collaborative</text>
+          <!-- center: intelligence layer -->
+          <g transform="translate(260 246)">
+            <circle cx="0" cy="0" r="82" fill="rgba(77,139,255,0.08)" stroke="rgba(255,255,255,0.14)" stroke-dasharray="4 7"/>
+            <circle cx="0" cy="0" r="60" fill="rgba(181,112,255,0.12)"/>
+            <circle cx="0" cy="0" r="42" fill="rgba(255,93,157,0.16)"/>
+            <circle cx="0" cy="0" r="27" fill="url(#plCoreG)"/>
+            <text x="0" y="-100" text-anchor="middle" fill="#e8ebff" font-size="9.5" letter-spacing="0.07em">INTELLIGENCE LAYER</text>
+            <!-- <text x="0" y="4" text-anchor="middle" fill="#ffffff" font-size="10" letter-spacing="0.06em">AI ORCHESTRATOR</text> -->
+
+            <!-- engine labels -->
+            <!-- <rect x="-52" y="-102" width="104" height="20" rx="10" fill="rgba(255,255,255,0.1)"/>
+            <text x="0" y="-88" text-anchor="middle" fill="#f4f6ff" font-size="9.5">Team Match</text>
+            <rect x="-114" y="-12" width="82" height="20" rx="10" fill="rgba(255,255,255,0.1)"/>
+            <text x="-73" y="2" text-anchor="middle" fill="#f4f6ff" font-size="9.5">Goals</text>
+            <rect x="32" y="-12" width="82" height="20" rx="10" fill="rgba(255,255,255,0.1)"/>
+            <text x="73" y="2" text-anchor="middle" fill="#f4f6ff" font-size="9.5">Coaching</text>
+            <rect x="-56" y="82" width="112" height="20" rx="10" fill="rgba(255,255,255,0.1)"/>
+            <text x="0" y="96" text-anchor="middle" fill="#f4f6ff" font-size="9.5">Benefits Route</text> -->
           </g>
 
-          <!-- Adaptive · middle-left -->
-          <g transform="translate(20 250) rotate(3)">
-            <rect x="0" y="0" width="180" height="58" rx="29" fill="url(#plAda)"/>
-            <circle cx="32" cy="29" r="15" fill="rgba(255,255,255,0.22)"/>
-            <!-- two curving arrows -->
-             <g transform="scale(0.675) translate(15, 15)">
-              <path d="M24 24 C 28 20, 38 20, 42 24" stroke="#ffffff" stroke-width="2" fill="none" stroke-linecap="round"/>
-              <path d="M42 34 C 38 38, 28 38, 24 34" stroke="#ffffff" stroke-width="2" fill="none" stroke-linecap="round"/>
-              <path d="M40 22 L44 24 L42 28" stroke="#ffffff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M26 36 L22 34 L24 30" stroke="#ffffff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-             </g>
-           
-            <text x="56" y="36" font-family="Instrument Serif" font-style="italic" font-size="22" fill="#ffffff">Adaptive</text>
+          <!-- right: personalized outputs -->
+          <g transform="translate(342 76)">
+            <rect x="0" y="0" width="170" height="344" rx="24" fill="rgba(18,25,56,0.9)" stroke="rgba(255,255,255,0.12)"/>
+            <text x="18" y="34" fill="rgba(255,255,255,0.68)" font-size="12" letter-spacing="0.12em">ADAPTIVE OUTPUTS</text>
+            <text x="18" y="58" fill="#ffffff" font-size="18" font-family="Instrument Serif" font-style="italic">What employees feel</text>
+
+            <!-- persona cards -->
+            <g transform="translate(14 84)">
+              <rect x="0" y="0" width="142" height="72" rx="14" fill="rgba(255,255,255,0.08)"/>
+              <circle cx="20" cy="18" r="7" fill="#ff8a4c"/>
+              <text x="34" y="22" fill="#ffffff" font-size="11">Parent persona</text>
+              <text x="12" y="44" fill="#dbe2ff" font-size="10">10-min home workouts</text>
+              <text x="12" y="59" fill="#dbe2ff" font-size="10">Lunch walk goals</text>
+            </g>
+            <g transform="translate(14 166)">
+              <rect x="0" y="0" width="142" height="72" rx="14" fill="rgba(255,255,255,0.08)"/>
+              <circle cx="20" cy="18" r="7" fill="#b570ff"/>
+              <text x="34" y="22" fill="#ffffff" font-size="11">Beginner persona</text>
+              <text x="12" y="44" fill="#dbe2ff" font-size="10">Low-friction first wins</text>
+              <text x="12" y="59" fill="#dbe2ff" font-size="10">Confidence pacing</text>
+            </g>
+            <g transform="translate(14 248)">
+              <rect x="0" y="0" width="142" height="76" rx="14" fill="rgba(255,255,255,0.08)"/>
+              <circle cx="20" cy="18" r="7" fill="#4d8bff"/>
+              <text x="34" y="22" fill="#ffffff" font-size="11">High performer</text>
+              <text x="12" y="44" fill="#dbe2ff" font-size="10">Advanced targets</text>
+              <text x="12" y="59" fill="#dbe2ff" font-size="10">Recovery prompts</text>
+            </g>
           </g>
 
-          <!-- Global · middle-right -->
-          <g transform="translate(310 260) rotate(-4)">
-            <rect x="0" y="0" width="170" height="58" rx="29" fill="url(#plGlo)"/>
-            <circle cx="32" cy="29" r="15" fill="rgba(255,255,255,0.22)"/>
-            <!-- globe with meridians -->
-             <g transform="scale(0.95) translate(2, 2)">
-              <circle cx="32" cy="29" r="9" fill="none" stroke="#ffffff" stroke-width="1.5"/>
-              <ellipse cx="32" cy="29" rx="9" ry="4" fill="none" stroke="#ffffff" stroke-width="1.3"/>
-              <line x1="32" y1="20" x2="32" y2="38" stroke="#ffffff" stroke-width="1.3"/>
-             </g>
-            
-            <text x="56" y="36" font-family="Instrument Serif" font-style="italic" font-size="22" fill="#ffffff">Global</text>
-          </g>
-
-          <!-- Holistic · bottom center -->
-          <g transform="translate(140 440) rotate(1)">
-            <rect x="0" y="0" width="220" height="62" rx="31" fill="url(#plHol)"/>
-            <circle cx="36" cy="31" r="16" fill="rgba(255,255,255,0.22)"/>
-            <!-- concentric circles -->
-             <g transform="scale(0.875) translate(5, 5)">
-              <circle cx="36" cy="31" r="11" fill="none" stroke="#ffffff" stroke-width="1.6"/>
-              <circle cx="36" cy="31" r="6"  fill="none" stroke="#ffffff" stroke-width="1.6"/>
-              <circle cx="36" cy="31" r="1.8" fill="#ffffff"/>
-             </g>
-            
-            <text x="60" y="39" font-family="Instrument Serif" font-style="italic" font-size="24" fill="#ffffff">Holistic</text>
-          </g>
-
-          <!-- thin connecting lines from each pill to the center cluster -->
-          <g stroke="rgba(255,255,255,0.16)" stroke-width="1" fill="none" stroke-dasharray="1.5 3">
-            <path d="M150 95 C 190 170, 220 210, 240 240"/>
-            <path d="M395 65  C 360 150, 320 200, 300 230"/>
-            <path d="M130 285 C 180 280, 210 275, 230 270"/>
-            <path d="M395 290 C 360 280, 320 275, 305 270"/>
-            <path d="M250 445 C 250 400, 250 330, 250 305"/>
-          </g>
+          <!-- feedback loop -->
+          <path d="M410 430 C 340 485, 210 486, 136 425" fill="none" stroke="rgba(255,255,255,0.22)" stroke-width="1.7" stroke-dasharray="3 6"/>
+          <path d="M136 425 L149.2 427.8 L141.3 437.5 Z" fill="rgba(255,255,255,0.36)"/>
+          <text x="258" y="490" text-anchor="middle" fill="rgba(255,255,255,0.72)" font-size="9.5" letter-spacing="0.06em">LIVE FEEDBACK LOOP: LEARNS, ADAPTS, IMPROVES</text>
         </svg>
       </div>
     </div>
@@ -1128,7 +1088,7 @@
 <section style="padding-top:60px;padding-bottom:80px">
   <div class="container x-narrow reveal">
     <div class="center">
-      <h2>A new operating system <br/>for <span class="serif" style="color: var(--accent-3)">human performance.</span></h2>
+      <h2>A new operating system <br/>for <span class="serif" style="color: var(--accent-2)">human performance.</span></h2>
       <p class="lead mt-m" style="max-width:60ch;margin-left:auto;margin-right:auto">
         Goal AI doesn't just freshen up the old model. It replaces it.
         Intelligent engines working in concert. Every one of them personal,
@@ -1284,8 +1244,8 @@
               <text x="30" y="35" text-anchor="middle" font-family="Inter" font-weight="700" font-size="13" fill="#070b1e">P</text>
               <text x="52" y="34" font-family="Inter" font-weight="500" font-size="13" fill="#f2f4ff">Priya</text>
               <text x="88" y="34" font-family="Inter" font-size="11" fill="#848aae">· yesterday</text>
-              <text x="18" y="62" font-family="Inter" font-size="13" fill="#c8cde6">Day 10 of morning</text>
-              <text x="18" y="80" font-family="Inter" font-size="13" fill="#c8cde6">breath. Cleared my head.</text>
+              <text x="18" y="62" font-family="Inter" font-size="13" fill="#c8cde6">Day 10 of morning meditation.</text>
+              <text x="18" y="80" font-family="Inter" font-size="13" fill="#c8cde6">Clearer head.</text>
               <g transform="translate(18 92)">
                 <rect width="118" height="22" rx="11" fill="rgba(181,112,255,0.22)"/>
                 <circle cx="14" cy="11" r="4" fill="#b570ff"/>
@@ -1494,7 +1454,7 @@
         </div>
       </div>
       <div class="copy reveal delay-1">
-        <h2>A coach who actually <span class="serif" style="color: var(--accent)">knows you.</span></h2>
+        <h2>A coach who actually <span class="serif" style="color: var(--accent-2)">knows you.</span></h2>
         <p class="lead">
           No templates. No blanket recommendations. Goal AI listens to your data,
           your feedback, and your actions, and writes the plan for the one human
@@ -1671,7 +1631,7 @@
         </div>
       </div>
       <div class="copy reveal delay-1">
-        <h2>Every signal, <span class="serif" style="color: var(--accent-4)">finally useful.</span></h2>
+        <h2>Every signal, <span class="serif" style="color: var(--accent-2)">finally useful.</span></h2>
         <p class="lead">
           Whoop. Oura. Apple. Garmin. Fitbit. Strava. Polar.
           The device you are wearing is already tracking your life. Goal AI is the first
@@ -1872,7 +1832,7 @@
         </div>
       </div>
       <div class="copy reveal delay-1">
-        <h2>Data with a <span class="serif" style="color: var(--accent-3)">point of view.</span></h2>
+        <h2>Data with a <span class="serif" style="color: var(--accent-2)">point of view.</span></h2>
         <p class="lead">
           Your sleep, movement, nutrition, mood. Goal AI turns every signal into something
           you can act on. Patterns only AI could spot. Trends hiding in the noise.
@@ -2098,7 +2058,7 @@
               <text x="26" y="70" font-family="Instrument Serif" font-style="italic" font-size="26" fill="#f2f4ff">This quarter.</text>
 
               <!-- Horizontal bars for pillar focus % -->
-              <g transform="translate(26 100)" font-family="Inter">
+              <g transform="translate(26 88)" font-family="Inter">
                 <!-- MOVEMENT -->
                 <text x="0" y="12" font-size="11" fill="#c8cde6">Movement</text>
                 <text x="308" y="12" text-anchor="end" font-size="11" font-weight="600" fill="#f2f4ff">42%</text>
@@ -2126,9 +2086,9 @@
 
               <!-- Footer stat -->
               <g transform="translate(26 260)">
-                <text x="0" y="0" font-family="Inter" font-size="10" fill="#848aae" letter-spacing="2">ACTIVE THIS QUARTER</text>
+                <text x="0" y="-2" font-family="Inter" font-size="10" fill="#848aae" letter-spacing="2">ACTIVE THIS QUARTER</text>
                 <text x="0" y="22" font-family="Inter" font-weight="700" font-size="22" fill="#f2f4ff" letter-spacing="-0.02em">1,482</text>
-                <text x="82" y="22" font-family="Inter" font-size="12" fill="#848aae">of 1,900</text>
+                <text x="70" y="22" font-family="Inter" font-size="12" fill="#848aae">of 1,900</text>
               </g>
               <g transform="translate(250 252)">
                 <rect x="0" y="0" width="84" height="28" rx="14" fill="rgba(77,139,255,0.15)" stroke="rgba(77,139,255,0.4)"/>
@@ -2141,7 +2101,7 @@
               <rect x="0" y="0" width="320" height="220" rx="20" fill="rgba(11,19,44,0.85)" stroke="rgba(255,255,255,0.08)"/>
 
               <text x="24" y="38" font-family="Inter" font-size="11" fill="#848aae" letter-spacing="2">HOW TEAMS ARE ORGANIZING</text>
-              <text x="24" y="66" font-family="Instrument Serif" font-style="italic" font-size="20" fill="#f2f4ff">208 crews, self-formed.</text>
+              <text x="24" y="66" font-family="Instrument Serif" font-style="italic" font-size="20" fill="#f2f4ff">208 teams, self-formed.</text>
 
               <!-- Network graph of team clusters -->
               <g transform="translate(24 90)">
@@ -2225,13 +2185,12 @@
               <rect x="0" y="0" width="214" height="28" rx="14" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.12)"/>
               <circle cx="18" cy="14" r="5" fill="none" stroke="#848aae" stroke-width="1.4"/>
               <path d="M15 14 L17 16 L21 12" stroke="#848aae" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-              <text x="32" y="18" font-family="Inter" font-size="11" fill="#c8cde6">De-identified · HIPAA-aligned</text>
             </g>
           </svg>
         </div>
       </div>
       <div class="copy reveal delay-1">
-        <h2>What your workforce <span class="serif" style="color: var(--accent)">is telling you.</span></h2>
+        <h2>What your workforce <span class="serif" style="color: var(--accent-2)">is telling you.</span></h2>
         <p class="lead">
           Goal AI reads across the whole organization and hands HR a point of view.
           Where focus is landing. How teams are forming. Where wellbeing is actually
@@ -2250,7 +2209,7 @@
 <section>
   <div class="container narrow">
     <div class="transcend reveal">
-      <h2>A challenge is just <span class="serif" style="color: var(--accent-4)">the beginning.</span></h2>
+      <h2>A challenge is just <span class="serif" style="color: var(--accent-2)">the beginning.</span></h2>
       <p class="lead">
         Challenges aren't the destination. They are a doorway.
         To a healthier workforce. To deeper benefits utilization. To the
@@ -2266,7 +2225,7 @@
 <section id="team">
   <div class="container">
     <div class="section-head reveal">
-      <h2>Two decades rebuilding how <span class="serif" style="color: var(--accent-3)">humans change.</span></h2>
+      <h2>Two decades rebuilding how <span class="serif" style="color: var(--accent-2)">humans change.</span></h2>
     </div>
 
     <div class="team-grid">
@@ -2274,7 +2233,7 @@
       <div class="person reveal">
         <div class="portrait">
           <!-- <img src="team-rajiv.png" alt="Rajiv Kumar, M.D., Co-Founder and CEO of Goal AI" width="240" height="240" loading="lazy" decoding="async"/> -->
-          <img src="Rajiv-headshot.png" alt="Rajiv Kumar, M.D., Co-Founder and CEO of Goal AI" width="240" height="240" loading="lazy" decoding="async"/>
+          <img src="Rajiv-headshot.png" alt="Rajiv Kumar, M.D., Co-Founder and CEO of Goal AI" width="240" height="240" loading="lazy" decoding="async" style="transform:translateX(4px);"/>
         </div>
         <div class="meta">
           <h3>Rajiv Kumar, M.D.</h3>
@@ -2303,7 +2262,7 @@
 <section id="demo" style="padding-top:80px">
   <div class="container narrow">
     <div class="cta-big reveal">
-      <h2>Reignite <span class="serif" style="color: var(--accent-2)">engagement.</span><br/>Reinvent <span class="serif" style="color: var(--accent)">wellbeing.</span></h2>
+      <h2>Reignite <span class="serif" style="color: var(--accent-2)">engagement.</span><br/>Reinvent <span class="serif" style="color: var(--accent-2)">wellbeing.</span></h2>
       <p class="lead mt-m" style="max-width:54ch;margin-left:auto;margin-right:auto">
         Your people deserve more than another step challenge.
         Goal AI is shipping the next chapter of employee wellbeing,
