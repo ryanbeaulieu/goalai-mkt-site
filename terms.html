@@ -48,7 +48,7 @@
   main{max-width:760px;margin:0 auto;padding:80px 28px 120px}
   h1{
     font-family:"Inter";font-weight:500;letter-spacing:-0.035em;
-    font-size:clamp(40px,5vw,64px);line-height:1.02;margin:0 0 8px;
+    font-size:clamp(40px,5vw,60px);line-height:1.02;margin:0 0 8px;
   }
   h1 .serif{color:var(--accent)}
   .tag{
@@ -59,7 +59,14 @@
     font-family:"Inter";font-weight:500;letter-spacing:-0.02em;
     font-size:22px;margin:48px 0 8px;
   }
+  h3{
+    font-family:"Inter";font-weight:500;letter-spacing:-0.015em;
+    font-size:18px;line-height:1.25;margin:32px 0 8px;color:var(--ink);
+  }
+  section{margin:0;padding:0}
+  section + section{margin-top:8px}
   p{color:var(--ink-2);font-size:16px;margin:14px 0}
+  .legal-meta{color:var(--muted);font-size:15px;margin:8px 0 0}
   .note{
     margin-top:48px;padding:20px 24px;
     border:1px dashed rgba(255,255,255,0.14);border-radius:16px;
@@ -82,38 +89,61 @@
 
 <main>
   <p class="tag">Legal</p>
-  <h1>Terms <span class="serif">of Service.</span></h1>
-  <p>Last updated: April 2026.</p>
+  <h1>Goal AI Terms Conditions.</h1>
+  <p class="legal-meta">Effective and last updated: October 20, 2025</p>
 
-  <div class="note">
-    This page is a placeholder. The final terms of service will be published
-    here shortly. If you have a question in the meantime, email
-    <a href="mailto:legal@goal.ai">legal@goal.ai</a>.
-  </div>
+  <section aria-labelledby="intro-heading">
+    <h2 id="intro-heading">Introduction</h2>
+    <p>These Terms &amp; Conditions govern access to and use of Goal AI’s websites, applications, and related services. The agreement refers to these collectively as the “Service.” By accessing or using the Service, you acknowledge that you have read and understood this agreement and that you agree to be bound by it. If your employer or another organization with which you are affiliated has entered into a separate written agreement with Goal AI, that agreement will control to the extent it conflicts with this document.</p>
+    <p>Goal AI provides a standalone platform that enables employees to create and join small wellbeing groups. The purpose of the Service is to support employee wellbeing, productivity, and social connection through employee-led groups and simple weekly activities. The Service uses artificial intelligence for a limited set of features. AI is used to generate group names, descriptions, and activity ideas based on user inputs. Users do not interact with AI through a chat interface.</p>
+    <p>If you do not agree to this agreement, you must not use the Service.</p>
+  </section>
 
-  <h2>1. Agreement</h2>
-  <p>Coming soon.</p>
+  <section aria-labelledby="terms-heading">
+    <h2 id="terms-heading">Terms &amp; Conditions</h2>
 
-  <h2>2. Acceptable use</h2>
-  <p>Coming soon.</p>
+    <h3>1. Eligibility and Access</h3>
+    <p>Use of the Service is limited to individuals who are at least eighteen years of age and who are authorized by their employer or sponsoring organization to access the Service. You are responsible for maintaining the confidentiality of your login credentials and for all activities that occur under your account.</p>
 
-  <h2>3. Accounts and access</h2>
-  <p>Coming soon.</p>
+    <h3>2. Roles and Group Features</h3>
+    <p>All users are members by default. A user who chooses to start a group is designated as the leader of that specific group. Leaders may define the group name and summary, select or update weekly activities, and close or archive the group. Members and leaders otherwise have the same capabilities within the Service.</p>
 
-  <h2>4. Fees and billing</h2>
-  <p>Coming soon.</p>
+    <h3>3. User Content and Ownership</h3>
+    <p>You retain ownership of the information and content that you submit to the Service. You grant Goal AI a limited, non-exclusive license to host, process, and display your content only as necessary to operate and provide the Service, to comply with law, and to perform support, security, and maintenance functions. Goal AI owns the Service, including its software, designs, documentation, and machine-generated content that is produced by the platform, except that Goal AI does not claim ownership in your input.</p>
 
-  <h2>5. Data, privacy, and security</h2>
-  <p>See our <a href="privacy.html">Privacy Policy</a>.</p>
+    <h3>4. Acceptable Use</h3>
+    <p>You agree not to use the Service in any unlawful or abusive manner. Prohibited conduct includes harassment, threats, hateful or discriminatory content, sexually explicit or violent content, doxxing, impersonation, infringement of the rights of others, distribution of malware, automated scraping or data harvesting that is not permitted by the Service, attempts to bypass or undermine security, and any activity that interferes with the operation of the Service.</p>
 
-  <h2>6. Warranties and limitations</h2>
-  <p>Coming soon.</p>
+    <h3>5. AI Features and Limitations</h3>
+    <p>The Service uses artificial intelligence to generate group names, descriptions, and activities based on user-provided onboarding inputs and group context. AI outputs may be inaccurate or incomplete and should be reviewed for appropriateness by users before use. The Service does not provide medical or legal advice and is not a crisis or emergency service. In an emergency, users should contact local emergency services or their employer’s designated resources.</p>
 
-  <h2>7. Termination</h2>
-  <p>Coming soon.</p>
+    <h3>6. Third-Party Services</h3>
+    <p>The Service may interoperate with or incorporate third-party services for hosting, analytics, messaging, logging, or similar functions. Those third parties act as service providers under contract and are required to protect personal information and to use it only for the provision of their services to Goal AI.</p>
 
-  <h2>8. Contact</h2>
-  <p>Questions? Reach us at <a href="mailto:legal@goal.ai">legal@goal.ai</a>.</p>
+    <h3>7. Beta or Preview Features</h3>
+    <p>Goal AI may offer features that are identified as beta, preview, or experimental. Such features are provided on an as-is basis and may be modified or discontinued at any time.</p>
+
+    <h3>8. Suspension and Termination</h3>
+    <p>Goal AI may suspend or terminate a user’s access to the Service if there is a violation of this agreement, a security or operational risk, a request by the sponsoring employer, or as required by law. You may stop using the Service at any time. Goal AI may retain limited records as described in the <a href="privacy.html">Privacy Policy</a>.</p>
+
+    <h3>9. Disclaimers</h3>
+    <p>To the fullest extent permitted by law, the Service is provided on an as-is and as-available basis. Goal AI disclaims all warranties that are not expressly stated in this agreement, including implied warranties of merchantability, fitness for a particular purpose, and non-infringement. Goal AI does not warrant that the Service will be uninterrupted, error-free, or free of harmful components. Goal AI does not guarantee any particular outcome from the use of the Service. A user’s use of the Service and implementation of any information or suggestions provided by the Service is at the user’s own risk.</p>
+
+    <h3>10. Limitation of Liability</h3>
+    <p>To the fullest extent permitted by law, Goal AI will not be liable for any indirect, incidental, consequential, special, exemplary, or punitive damages arising out of or relating to the Service or this agreement. Goal AI’s total aggregate liability to you for all claims of any kind arising out of or relating to the Service or this agreement will not exceed one hundred dollars. If your employer has a separate written agreement with Goal AI, the liability terms in that agreement will govern the relationship between Goal AI and the employer.</p>
+
+    <h3>11. Indemnification</h3>
+    <p>You agree to indemnify and hold harmless Goal AI and its officers, directors, employees, and agents from and against any third-party claims, liabilities, damages, losses, and expenses, including but not limited to reasonable attorneys’ fees and other litigation expenses, arising from your unlawful use of the Service or your posting of content that violates this agreement or the rights of others.</p>
+
+    <h3>12. Governing Law and Venue</h3>
+    <p>This agreement is governed by the laws of the State of New York without regard to its conflict of laws rules. You agree that the state and federal courts located in New York County, New York will have exclusive jurisdiction for any dispute not subject to another agreement between Goal AI and your employer.</p>
+
+    <h3>13. Changes to this Agreement</h3>
+    <p>Goal AI may modify this agreement from time to time. The effective date at the top of this document will indicate the date of the most recent changes. For material changes, Goal AI will provide reasonable notice through the Service or by other appropriate means. Continued use of the Service after changes take effect constitutes acceptance of the updated agreement.</p>
+
+    <h3>14. Contact</h3>
+    <p>Questions about these Terms &amp; Conditions may be directed to Goal AI at <a href="mailto:support@goal.ai">support@goal.ai</a>.</p>
+  </section>
 </main>
 
 <footer>
